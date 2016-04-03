@@ -7,7 +7,6 @@ let App = React.createClass({
   render : function(){
     return (
       <div>
-        My App
         <div className="app__slideshow__container">
           <Slideshow />
         </div>

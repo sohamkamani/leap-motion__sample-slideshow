@@ -17,6 +17,10 @@ export default ({dispatch, getState}) => {
          dispatch({type: 'SLIDE_MOVING_RIGHT'});
        }
      }
+
+     if(currentGesture && currentGesture.type === 'screenTap'){
+       dispatch({type: 'SLIDE_ENHANCE_TOGGLE'});
+     }
    });
 
    return {

@@ -1,25 +1,38 @@
- .app {
-
-   &__slideshow{
-     display: flex;
-     flex-direction: row;
-     transition: left 1s;
-     height: 500px;
-
-     &__container {
-       width: 100%;
-       overflow: hidden;
-     }
-   }
-
-   &__slide {
-     min-width: 40%;
-     margin: auto 10px;
-     transition: height 1s;
-
-     &__title {
-       color: white;
-       text-shadow: 0px 1px #000000;
-     }
-   }
- }
+.app {
+  &__slideshow {
+    display: flex;
+    flex-direction: row;
+    transition: left 1s;
+    height: 500px;
+    &__container {
+      width: 100%;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+  }
+  &__slide {
+    min-width: 40%;
+    margin: auto 10px;
+    transition: height 1s;
+    &__title {
+      color: white;
+      margin-left: 20px;
+      font-size: 2em;
+      text-shadow: 0 1px #000000;
+    }
+    &__description {
+      font-family: sans-serif;
+      font-weight: lighter;
+      color: white;
+      width: 50%;
+      background-color: rgba(20,20,20,0.5);
+      margin-left: 10%;
+      padding: 10px;
+      transition: opacity 1s;
+      border-radius: 10px;
+      -webkit-box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
+      -moz-box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
+      box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
+    }
+  }
+}
