@@ -1,0 +1,11 @@
+ .app {
+
+   &__slideshow{
+     display: flex;
+     flex-direction: row;
+   }
+
+   &__slide {
+     min-width: 40%;
+   }
+ }
