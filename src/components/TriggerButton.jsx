@@ -3,7 +3,10 @@ import {connect} from 'react-redux';
 
 const TriggerButton = ({dispatch}) => {
   return (
-    <button onClick={()=> dispatch({type : 'SLIDE_MOVING_LEFT'})} />
+    <div>
+      <button onClick={() => dispatch({type: 'SLIDE_MOVING_LEFT'})}>left</button>
+      <button onClick={() => dispatch({type: 'SLIDE_MOVING_RIGHT'})}>right</button>
+    </div>
   );
 };
 

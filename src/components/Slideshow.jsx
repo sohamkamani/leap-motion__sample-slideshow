@@ -1,12 +1,12 @@
 import React, { PropTypes } from 'react';
 import {connect} from 'react-redux';
 import Slide from './Slide.jsx';
+import findSlideIndex from '../utils/find-slide-index';
 import transitionEvent from '../utils/css-transition';
 
 const stateToProps = state => {
   return {
     slideshow : state.slideshow.slides,
-    activeSlide : state.slideshow.activeSlide,
     slideWidth : state.slideshow.slideWidth
   };
 };
@@ -22,7 +22,6 @@ const dispatchToProps = dispatch => {
 const Slideshow = React.createClass({
   propTypes : {
     slideshow : PropTypes.array.isRequired,
-    activeSlide : PropTypes.number.isRequired,
     slideWidth : PropTypes.number
   },
   componentDidMount () {
@@ -31,9 +30,10 @@ const Slideshow = React.createClass({
   },
   render () {
     const props = this.props;
+    const activeSlide = findSlideIndex(props.slideshow);
     const style = {
       position : 'relative',
-      left : (-(props.activeSlide * props.slideWidth)) + '%'
+      left : (-(activeSlide * props.slideWidth)) + '%'
     };
     return (
       <div className="app__slideshow" style={style} ref="slideshow">

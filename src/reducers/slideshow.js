@@ -1,50 +1,56 @@
-import {combineReducers} from 'redux';
+import {
+  combineReducers
+} from 'redux';
+import findSlideIndex from '../utils/find-slide-index';
 
 const defaultSlideshow = {
-  slides : [
-    {
-      title : 't1',
-      description : 'lorem ipsum'
-    },
-    {
-      title : 't2',
-      description : 'lorem ipsum'
-    },
-    {
-      title : 't3',
-      description : 'lorem ipsum'
-    },
-    {
-      title : 't4',
-      description : 'lorem ipsum'
-    }
-  ],
+  slides: [{
+    title: 't1',
+    description: 'lorem ipsum'
+  }, {
+    title: 't2',
+    description: 'lorem ipsum'
+  }, {
+    title: 't3',
+    description: 'lorem ipsum'
+  }, {
+    title: 't4',
+    description: 'lorem ipsum'
+  }],
 
-  slideWidth : 50,
-  activeSlide : 0
+  slideWidth: 50,
+  activeSlide: 0
 };
 
-const slides = () => defaultSlideshow.slides;
+const activateSlide = (slides, index) => {
+  const activeIndex = index < 0 ? 0 : index >= slides.length ? slides.length - 1 : index;
+  return slides.map((slide, i) => {
+    if(i === activeIndex){
+      return Object.assign({}, slide, {
+        active : true
+      });
+    }
+    return Object.assign({}, slide, {
+      active : false
+    });
+  });
+};
+
+const slides = (state = defaultSlideshow.slides, action) => {
+  const currentActiveIndex = findSlideIndex(state);
+  switch (action.type) {
+  case 'SLIDE_MOVING_LEFT':
+    return activateSlide(state, currentActiveIndex + 1);
+  case 'SLIDE_MOVING_RIGHT':
+    return activateSlide(state, currentActiveIndex - 1);
+  default:
+    return state;
+  }
+};
 
 const slideWidth = () => 50;
 
-const activeSlide = (state = 0, action) => {
-  const speed = 0.1;
-  if(state < 0){
-    return 0;
-  }
-  switch (action.type) {
-    case 'SLIDE_MOVING_LEFT':
-      return state += speed;
-    case 'SLIDE_MOVING_RIGHT':
-      return state -= speed;
-    default:
-      return state;
-  }
-};
-
 export default combineReducers({
   slides,
-  slideWidth,
-  activeSlide
+  slideWidth
 });
