@@ -15,6 +15,9 @@ module.exports = {
     "plugins": [
         "react"
     ],
+    "globals" : {
+      "Leap" : true
+    },
     "rules": {
         "indent": 0,
         "no-console" : 0,
