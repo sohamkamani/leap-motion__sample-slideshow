@@ -1,5 +1,14 @@
 import React, { PropTypes } from 'react';
+import {connect} from 'react-redux';
 import Slide from './Slide.jsx';
+
+const stateToProps = state => {
+  return {
+    slideshow : state.slideshow.slides,
+    activeSlide : state.slideshow.activeSlide,
+    slideWidth : state.slideshow.slideWidth
+  };
+};
 
 const Slideshow = React.createClass({
   propTypes : {
@@ -21,4 +30,4 @@ const Slideshow = React.createClass({
   }
 });
 
-export default Slideshow;
+export default connect(stateToProps)(Slideshow);
