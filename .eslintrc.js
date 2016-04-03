@@ -4,7 +4,7 @@ module.exports = {
         "es6": true,
         "node": true
     },
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
     "parserOptions": {
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
@@ -16,10 +16,7 @@ module.exports = {
         "react"
     ],
     "rules": {
-        "indent": [
-            "error",
-            4
-        ],
+        "indent": 0,
         "linebreak-style": [
             "error",
             "unix"
