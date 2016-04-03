@@ -3,6 +3,7 @@
    &__slideshow{
      display: flex;
      flex-direction: row;
+     transition: left 1s;
    }
 
    &__slide {
