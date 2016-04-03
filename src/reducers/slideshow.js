@@ -6,16 +6,21 @@ import findSlideIndex from '../utils/find-slide-index';
 const defaultSlideshow = {
   slides: [{
     title: 't1',
-    description: 'lorem ipsum'
+    description: 'lorem ipsum',
+    img : 'india.jpg'
   }, {
     title: 't2',
-    description: 'lorem ipsum'
+    description: 'lorem ipsum',
+    img : 'paris.jpg'
+
   }, {
     title: 't3',
-    description: 'lorem ipsum'
+    description: 'lorem ipsum',
+    img : 'berlin.jpg'
   }, {
     title: 't4',
-    description: 'lorem ipsum'
+    description: 'lorem ipsum',
+    img : 'brazil.jpg'
   }],
 
   slideWidth: 50,
@@ -48,7 +53,7 @@ const slides = (state = defaultSlideshow.slides, action) => {
   }
 };
 
-const slideWidth = () => 50;
+const slideWidth = () => 70;
 
 export default combineReducers({
   slides,

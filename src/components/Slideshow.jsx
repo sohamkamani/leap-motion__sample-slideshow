@@ -33,7 +33,7 @@ const Slideshow = React.createClass({
     const activeSlide = findSlideIndex(props.slideshow);
     const style = {
       position : 'relative',
-      left : (-(activeSlide * props.slideWidth)) + '%'
+      left : (-(activeSlide * props.slideWidth) + (100 - props.slideWidth)/2) + '%'
     };
     return (
       <div className="app__slideshow" style={style} ref="slideshow">

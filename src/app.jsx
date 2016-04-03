@@ -8,7 +8,9 @@ let App = React.createClass({
     return (
       <div>
         My App
-        <Slideshow />
+        <div className="app__slideshow__container">
+          <Slideshow />
+        </div>
         <TriggerButton />
       </div>
     );

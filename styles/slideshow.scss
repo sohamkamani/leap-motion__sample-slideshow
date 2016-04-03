@@ -4,9 +4,18 @@
      display: flex;
      flex-direction: row;
      transition: left 1s;
+     height: 500px;
+
+     &__container {
+       width: 100%;
+       overflow: hidden;
+     }
    }
 
    &__slide {
      min-width: 40%;
+     margin: auto 10px;
+     transition: height 1s;
+    //  height: 500px;
    }
  }

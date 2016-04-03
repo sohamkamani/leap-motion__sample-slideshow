@@ -8,7 +8,10 @@ const Slide = React.createClass({
   render() {
     const props = this.props;
     const style= {
-      minWidth : props.slideWidth
+      minWidth : props.slideWidth,
+      background : `url("images/${props.img}")`,
+      backgroundSize: '100%',
+      height : props.active ? '500px' : '300px'
     };
     return (
       <div className="app__slide" style={style}>
