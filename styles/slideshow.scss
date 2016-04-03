@@ -16,6 +16,10 @@
      min-width: 40%;
      margin: auto 10px;
      transition: height 1s;
-    //  height: 500px;
+
+     &__title {
+       color: white;
+       text-shadow: 0px 1px #000000;
+     }
    }
  }

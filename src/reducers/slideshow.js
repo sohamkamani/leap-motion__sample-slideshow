@@ -7,7 +7,8 @@ const defaultSlideshow = {
   slides: [{
     title: 't1',
     description: 'lorem ipsum',
-    img : 'india.jpg'
+    img : 'india.jpg',
+    active : true
   }, {
     title: 't2',
     description: 'lorem ipsum',
@@ -41,6 +42,8 @@ const activateSlide = (slides, index) => {
   });
 };
 
+const enhanceSlideToggle = (slides) => slides.map(slide => slide.active ? Object.assign({}, slide, {enhanced : !slide.enhanced}) : slide);
+
 const slides = (state = defaultSlideshow.slides, action) => {
   const currentActiveIndex = findSlideIndex(state);
   switch (action.type) {
@@ -48,6 +51,8 @@ const slides = (state = defaultSlideshow.slides, action) => {
     return activateSlide(state, currentActiveIndex + 1);
   case 'SLIDE_MOVING_RIGHT':
     return activateSlide(state, currentActiveIndex - 1);
+  case 'SLIDE_ENHANCE_TOGGLE':
+    return enhanceSlideToggle(state);
   default:
     return state;
   }

@@ -6,6 +6,7 @@ const TriggerButton = ({dispatch}) => {
     <div>
       <button onClick={() => dispatch({type: 'SLIDE_MOVING_LEFT'})}>left</button>
       <button onClick={() => dispatch({type: 'SLIDE_MOVING_RIGHT'})}>right</button>
+      <button onClick={() => dispatch({type: 'SLIDE_ENHANCE_TOGGLE'})}>enhance toggle</button>
     </div>
   );
 };

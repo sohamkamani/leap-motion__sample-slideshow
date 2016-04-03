@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React, {PropTypes} from 'react';
 
 const Slide = React.createClass({
@@ -15,8 +16,8 @@ const Slide = React.createClass({
     };
     return (
       <div className="app__slide" style={style}>
-        <h3>{props.title}</h3>
-        <p>{props.description}</p>
+        <h3 className="app__slide__title">{props.title}</h3>
+        <p className={classNames('app__slide__description', props.enhanced ? 'app__slide--enhanced' : '')}>{props.description}</p>
       </div>
     );
   }
