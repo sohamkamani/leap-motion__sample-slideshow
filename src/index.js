@@ -7,7 +7,7 @@ import {Provider} from 'react-redux';
 
 const mainReducer = combineReducers({slideshow});
 
-const mainStore = createStore(mainReducer);
+const mainStore = createStore(mainReducer, {}, window.devToolsExtension ? window.devToolsExtension() : undefined);
 
 const node = document.getElementById('app-node');
 

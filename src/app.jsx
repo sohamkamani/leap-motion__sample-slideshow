@@ -1,6 +1,7 @@
 'use strict';
 import React from 'react';
 import Slideshow from './components/Slideshow.jsx';
+import TriggerButton from './components/TriggerButton.jsx';
 
 let App = React.createClass({
   render : function(){
@@ -8,6 +9,7 @@ let App = React.createClass({
       <div>
         My App
         <Slideshow />
+        <TriggerButton />
       </div>
     );
   }
