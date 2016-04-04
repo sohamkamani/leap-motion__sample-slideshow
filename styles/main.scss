@@ -1,6 +1,22 @@
-html, body {
-  margin : 0;
+html,
+body {
+  margin: 0;
   padding: 0;
+  background-color: rgba(164, 205, 210, 0.04);
 }
-
-@import "slideshow.scss"
+.app__header {
+  background: #0277BD;
+  color: white;
+  font-family: helvetica;
+  padding: 13px;
+  font-weight: 300;
+  box-shadow: 0 1px 5px #999999;
+  &--sidetext {
+    font-size: 12px;
+    font-style: italic;
+    color: honeydew;
+    font-weight: 500;
+  }
+}
+@import "slideshow.scss";
+@import "team.scss";

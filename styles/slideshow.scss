@@ -1,25 +1,46 @@
 .app {
+
   &__slideshow {
     display: flex;
     flex-direction: row;
     transition: left 1s;
     height: 500px;
+    padding: 10px;
     &__container {
-      width: 100%;
+      margin: 15px;
+      box-shadow: 0 0 4px grey;
       overflow: hidden;
-      margin-top: 20px;
+      background: white;
     }
   }
   &__slide {
     min-width: 40%;
     margin: auto 10px;
     transition: height 1s;
+    background-repeat: no-repeat !important;
+    background-size: cover;
+    box-shadow: 0 0 10px gray;
     &__title {
-      color: white;
+      color: black;
       margin-left: 20px;
-      font-size: 2em;
-      text-shadow: 0 1px #000000;
+      font-family: helvetica;
+      font-size: 1.3em;
+      font-weight: 400;
+      background: rgba(255, 255, 255, 0.38);
+      padding: 5px 5px 5px 15px;
+
     }
+    &--buttongroup{
+      width: 360px;
+      margin:0 auto;
+    }
+    &--button{
+        padding: 10px;
+        width: 120px;
+        // font-size: 12px;
+    }
+
+
     &__description {
       font-family: sans-serif;
       font-weight: lighter;

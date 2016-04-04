@@ -3,10 +3,10 @@ import {connect} from 'react-redux';
 
 const TriggerButton = ({dispatch}) => {
   return (
-    <div>
-      <button onClick={() => dispatch({type: 'SLIDE_MOVING_LEFT'})}>left</button>
-      <button onClick={() => dispatch({type: 'SLIDE_MOVING_RIGHT'})}>right</button>
-      <button onClick={() => dispatch({type: 'SLIDE_ENHANCE_TOGGLE'})}>enhance toggle</button>
+    <div className="app__slide--buttongroup">
+      <button className="app__slide--button" onClick={() => dispatch({type: 'SLIDE_MOVING_LEFT'})}>Left</button>
+      <button className="app__slide--button" onClick={() => dispatch({type: 'SLIDE_MOVING_RIGHT'})}>Right</button>
+      <button className="app__slide--button" onClick={() => dispatch({type: 'SLIDE_ENHANCE_TOGGLE'})}>Toggle Desc</button>
     </div>
   );
 };

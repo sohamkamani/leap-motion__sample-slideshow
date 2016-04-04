@@ -9,8 +9,8 @@ const Slide = React.createClass({
     const props = this.props;
     const style= {
       minWidth : props.slideWidth,
-      background : `url("images/${props.img}")`,
-      backgroundSize: '100%',
+      background : `url("images/${props.img}") no-repeat`,
+      backgroundSize:'cover',
       height : props.active ? '500px' : '300px'
     };
     const descriptionStyle = {
