@@ -6,7 +6,7 @@ const Header = React.createClass({
 
     return (
       <div className="app__header" >
-          Digital NEXT <span className="app__header--sidetext">  - experimenting with next generation technologies</span>
+          Digital Next <span className="app__header--sidetext"><br/>experimenting with next generation technologies</span>
       </div>
     );
   }

@@ -5,6 +5,8 @@ body {
   background-color: rgba(164, 205, 210, 0.04);
 }
 .app__header {
+  text-align: center;
+  font-size: 1.7em;
   background: #0277BD;
   color: white;
   font-family: helvetica;
@@ -12,7 +14,7 @@ body {
   font-weight: 300;
   box-shadow: 0 1px 5px #999999;
   &--sidetext {
-    font-size: 12px;
+    font-size: 0.6em;
     font-style: italic;
     color: honeydew;
     font-weight: 500;
