@@ -1,10 +1,17 @@
+import findSlideIndex from './utils/find-slide-index';
+
 export default ({dispatch, getState}) => {
 
    var controllerOptions = {enableGestures: true};
 
    const start = () => Leap.loop(controllerOptions, function(frame) {
-     const {paused} = getState();
+     const {paused, slideshow : {slides}} = getState();
+
      if (paused) {
+       const slideIndex = findSlideIndex(slides);
+       if(slideIndex <= 0 || slideIndex >= slides.length){
+         dispatch({type : 'UNPAUSE'});
+       }
        return; // Skip this update
      }
 
