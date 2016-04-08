@@ -1,4 +1,4 @@
-import findSlideIndex from './utils/find-slide-index';
+import moveSlideCreator from './action-creators/moveslide';
 
 export default ({dispatch, getState}) => {
 
@@ -8,20 +8,17 @@ export default ({dispatch, getState}) => {
      const {paused, slideshow : {slides}} = getState();
 
      if (paused) {
-       const slideIndex = findSlideIndex(slides);
-       if(slideIndex <= 0 || slideIndex >= slides.length){
-         dispatch({type : 'UNPAUSE'});
-       }
        return; // Skip this update
      }
 
      const currentGesture = frame.gestures[0];
      if (currentGesture && currentGesture.type === 'swipe'){
+       const moveSlides = moveSlideCreator(slides);
        if(currentGesture.direction[0] < 0){
-         dispatch({type: 'SLIDE_MOVING_LEFT'});
+         dispatch(moveSlides.left());
        }
        else{
-         dispatch({type: 'SLIDE_MOVING_RIGHT'});
+         dispatch(moveSlides.right());
        }
      }
 
