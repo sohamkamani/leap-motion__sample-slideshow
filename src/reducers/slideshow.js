@@ -1,7 +1,6 @@
 import {
   combineReducers
 } from 'redux';
-import findSlideIndex from '../utils/find-slide-index';
 
 import defaultSlideshow from '../data/default-slideshow';
 
@@ -22,7 +21,7 @@ const activateSlide = (slides, index) => {
 const enhanceSlideToggle = (slides) => slides.map(slide => slide.active ? Object.assign({}, slide, {enhanced : !slide.enhanced}) : slide);
 
 const slides = (state = defaultSlideshow.slides, action) => {
-  const currentActiveIndex = findSlideIndex(state);
+  const {currentActiveIndex} = action;
   switch (action.type) {
   case 'SLIDE_MOVING_LEFT':
     return activateSlide(state, currentActiveIndex + 1);
